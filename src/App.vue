@@ -16,7 +16,7 @@ const { isSupported, isConnected, device, requestDevice, server, disconnect } =
 
 let getHomeMessage = async () => {
   try {
-    const response = await axios.get("http://127.0.0.1:8000/"); // ✅ Ensure this API is running
+    const response = await axios.get("https://obd-api.onrender.com/"); // ✅ Ensure this API is running
     message.value = response.data.message;
     error.value = "";
     speed.value = "";
@@ -33,7 +33,7 @@ let getHomeMessage = async () => {
 
 let getSpeed = async () => {
   try {
-    const response = await axios.get("http://127.0.0.1:8000/data"); // ✅ Ensure this API is running
+    const response = await axios.get("https://obd-api.onrender.com/data"); // ✅ Ensure this API is running
     speed.value = response.data.speed;
     speedError.value = response.data.error;
     error.value = "";
@@ -50,7 +50,7 @@ let getSpeed = async () => {
 
 let getLogs = async () => {
   try {
-    const response = await axios.get("http://127.0.0.1:8000/logs"); // ✅ Ensure this API is running
+    const response = await axios.get("https://obd-api.onrender.com/logs"); // ✅ Ensure this API is running
     logs.value = response.data.logs;
     speed.value = "";
     speedError.value = "";
